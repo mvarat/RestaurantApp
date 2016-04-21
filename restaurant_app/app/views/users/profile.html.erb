@@ -1,9 +1,7 @@
 <h2>Hello <%= @user.name %>!</h2>
 
-<%= button_to "Log Out", deletion_station_path, method: :delete %>
+<h5><%= link_to "Your Tables", parties_path %></h5>
 
-<h5><%= link_to "View Parties", parties_path %></h5>
-
-<h5><%= link_to "Create A New Party", new_party_path %></h5>
+<h5><%= link_to "Create A New Table", new_party_path %></h5>
 
 <h5><%= link_to "Menu", items_path %></h5>
