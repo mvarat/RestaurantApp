@@ -5,7 +5,8 @@ class PartiesController < ApplicationController
   #index
   def index
     @user = current_user
-    @parties = Party.where(user_id: @user)
+    @parties = Party.where(user_id: @user).order("created_at DESC")
+
   end
 
   #new

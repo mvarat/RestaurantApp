@@ -2,10 +2,9 @@
 
 <h6><%= link_to "Add a new party", new_party_path %></h6>
 
-<% @parties.each do |party| %>
 
-  <p>Table Number: <%= link_to( party.table_num, party_path(party.id) ) %></p>
+<% @parties.each do |party| %>
+  <h1><%= link_to( party.table_num, party_orders_path(party.id) ) %></h1>
   <p>Is paid? <%= party.is_paid %></p>
-  <h6><%= link_to "View Orders", party_orders_path(party.id)%></h6>
   <h6><%= link_to "Add Order", new_party_order_path(party.id) %></h6>
 <% end %>

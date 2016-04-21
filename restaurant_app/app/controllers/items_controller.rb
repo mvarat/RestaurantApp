@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   include SessionsHelper
 
   def index
-    @items = Item.all
+    @items = Item.where(active: true)
   end
 
   def new

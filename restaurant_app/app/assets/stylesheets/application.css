@@ -15,10 +15,14 @@
  */
 
 body {
-  background-color: paleturquoise;
+  background-color: white;
   text-align: center;
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  margin: 0;
 }

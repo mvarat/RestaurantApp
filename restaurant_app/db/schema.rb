@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421145754) do
+ActiveRecord::Schema.define(version: 20160421211825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",                      null: false
     t.string   "category"
-    t.integer  "price",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "price",                     null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "active",     default: true, null: false
   end
 
   create_table "orders", force: :cascade do |t|

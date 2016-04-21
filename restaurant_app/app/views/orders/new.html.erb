@@ -1,6 +1,6 @@
 <h1>New Order</h1>
 
-<h5>Appetizers:</h5>
+<h6>Appetizers:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.collection_select(:item_id, Item.where(category: "Appetizer"), :id, :name ) %>
@@ -12,7 +12,7 @@
   <%= f.submit %>
 <% end %>
 
-<h5>Entrees:</h5>
+<h6>Entrees:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.collection_select(:item_id, Item.where(category: "Entree"), :id, :name ) %>
@@ -23,7 +23,7 @@
   <br>
   <%= f.submit %>
 <% end %>
-<h5>Desserts:</h5>
+<h6>Desserts:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.collection_select(:item_id, Item.where(category: "Dessert"), :id, :name ) %>
@@ -34,7 +34,7 @@
   <br>
   <%= f.submit %>
 <% end %>
-<h5>Drinks:</h5>
+<h6>Drinks:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.collection_select(:item_id, Item.where(category: "Beverage"), :id, :name ) %>

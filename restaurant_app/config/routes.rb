@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   resources :items
 
 
-
+  get '/admin' =>"items#index", as: :admin
   get '/users/log_in' => "users#log_in", as: :log_in
-   get '/users/profile' => "users#profile", as: :profile
+  get '/users/profile' => "users#profile", as: :profile
 
   post '/sessions' => "sessions#create", as: :creation_station
   delete '/sessions' => "sessions#destroy", as: :deletion_station
