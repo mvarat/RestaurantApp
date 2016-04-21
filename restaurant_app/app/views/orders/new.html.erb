@@ -3,7 +3,7 @@
 <h5>Appetizers:</h5>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where category: "Appetizer", :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -15,7 +15,7 @@
 <h5>Entrees:</h5>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where category: "Entree", :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -26,7 +26,7 @@
 <h5>Desserts:</h5>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where category: "Dessert", :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -37,7 +37,7 @@
 <h5>Drinks:</h5>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where category: "Beverage", :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>

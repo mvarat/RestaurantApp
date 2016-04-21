@@ -6,7 +6,7 @@
 
 
 <p><%= link_to( order.id, party_order_path(id:order.id, party_id: @party.id) ) %>
-<p>Item ID: <%= order.item_id %> </p>
+<p> <%= order.item.name %>, $<%= order.item.name %> </p>
 <p>Notes: <%= order.notes %> </p>
 
 
