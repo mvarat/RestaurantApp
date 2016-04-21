@@ -1,6 +1,9 @@
 <h2>Sign Up</h2>
 
-<%= form_for @server do |f| %>
+<%= form_for @user do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
   <%= f.label :username %>
   <%= f.text_field :username %>

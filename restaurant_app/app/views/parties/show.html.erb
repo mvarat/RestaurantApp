@@ -1,0 +1,9 @@
+<h1>Show Party</h1>
+
+<h6><%= link_to "ADD ORDER", new_party_order_path(@party) %></h6>
+
+<h5>Table Number: <%= @party.table_num %></h5>
+<h5>Number of Guests: <%= @party.num_of_guests %></h5>
+<h5>Is paid? <%= @party.is_paid %></h5>
+<h6><%= link_to "EDIT", edit_party_path(@party.id) %></h6>
+<h6><%= link_to "BACK TO PARTIES", parties_path %></h6>

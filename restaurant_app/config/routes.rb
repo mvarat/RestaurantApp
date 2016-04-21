@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  resources :servers, only: [:new, :create]
-  resources :reservations
-  resources :orders
+  resources :users, only: [:new, :create]
+  resources :parties do
+    resources :orders
+  end
   resources :items
 
-  get '/servers/log_in' => "servers#log_in", as: :log_in
-  # get '/users/profile' => "users#profile", as: :profile
+
+
+  get '/users/log_in' => "users#log_in", as: :log_in
+   get '/users/profile' => "users#profile", as: :profile
 
   post '/sessions' => "sessions#create", as: :creation_station
   delete '/sessions' => "sessions#destroy", as: :deletion_station

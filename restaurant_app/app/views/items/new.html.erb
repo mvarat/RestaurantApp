@@ -1,0 +1,14 @@
+<%= form_for @item do |f| %>
+
+  <%= f.label :name, "Item Name" %>
+  <%= f.text_field :name%>
+
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <br>
+  <%= f.submit %>
+<% end %>

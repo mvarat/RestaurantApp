@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419211813) do
+ActiveRecord::Schema.define(version: 20160420201656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,23 +25,23 @@ ActiveRecord::Schema.define(version: 20160419211813) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "reservation_id"
+    t.integer  "party_id"
     t.integer  "item_id"
     t.text     "notes"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "reservations", force: :cascade do |t|
+  create_table "parties", force: :cascade do |t|
     t.integer  "num_of_guests",                 null: false
     t.integer  "table_num",                     null: false
     t.boolean  "is_paid",       default: false
-    t.integer  "server_id"
+    t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
 
-  create_table "servers", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name",            null: false
     t.string   "username",        null: false
     t.string   "password_digest"
@@ -50,6 +50,6 @@ ActiveRecord::Schema.define(version: 20160419211813) do
   end
 
   add_foreign_key "orders", "items"
-  add_foreign_key "orders", "reservations"
-  add_foreign_key "reservations", "servers"
+  add_foreign_key "orders", "parties"
+  add_foreign_key "parties", "users"
 end

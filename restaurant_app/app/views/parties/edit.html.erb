@@ -1,0 +1,18 @@
+<h1>Edit Party</h1>
+
+
+<%= form_for @party do |f| %>
+
+  <%= f.label :table_num, "Table Number" %>
+  <%= f.text_field :table_num %>
+
+  <%= f.label :num_of_guests, "Number of Guests"%>
+  <%= f.text_field :num_of_guests %>
+
+  <%= f.label :is_paid, "Paid?" %>
+  <%= f.check_box :is_paid %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<h6><%= link_to "Delete Party", party_path(@party), method: :delete %></h6>
