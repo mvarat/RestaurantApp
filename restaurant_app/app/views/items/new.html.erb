@@ -3,8 +3,8 @@
   <%= f.label :name, "Item Name" %>
   <%= f.text_field :name%>
 
-  <%= f.label :cuisine %>
-  <%= f.text_field :cuisine %>
+  <%= f.label :category %>
+  <%= f.select :category, ['Appetizer', 'Entree', 'Dessert', 'Sides', 'Beverage']%>
 
   <%= f.label :price %>
   <%= f.text_field :price %>

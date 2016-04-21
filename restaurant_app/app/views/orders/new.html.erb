@@ -1,5 +1,40 @@
 <h1>New Order</h1>
 
+<h5>Appetizers:</h5>
+<%= form_for ([@party,@order]) do |f| %>
+
+  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+
+  <%= f.label :notes  %>
+  <%= f.text_field :notes %>
+
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<h5>Entrees:</h5>
+<%= form_for ([@party,@order]) do |f| %>
+
+  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+
+  <%= f.label :notes  %>
+  <%= f.text_field :notes %>
+
+  <br>
+  <%= f.submit %>
+<% end %>
+<h5>Desserts:</h5>
+<%= form_for ([@party,@order]) do |f| %>
+
+  <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
+
+  <%= f.label :notes  %>
+  <%= f.text_field :notes %>
+
+  <br>
+  <%= f.submit %>
+<% end %>
+<h5>Drinks:</h5>
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.collection_select(:item_id, Item.all, :id, :name ) %>
