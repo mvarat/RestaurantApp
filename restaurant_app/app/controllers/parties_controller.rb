@@ -26,6 +26,7 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find params[:id]
+    @orders = Order.where(party_id: @party.id)
   end
 
   #          PATCH  /travelers/:id(.:format)         travelers#update

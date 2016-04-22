@@ -1,7 +1,8 @@
 <h4>Table <%= @party.table_num %></h4>
 
-
-<h6><%= link_to "ADD ITEM", new_party_order_path(@party) %></h6>
+<h6><%= link_to "ADD ORDER", new_party_order_path(@party) %></h6>
+<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %></h6>
+<h6><%= link_to "VIEW RECEIPT", party_path(@party) %></h6>
 
 <% @orders.each do |order| %>
   <% if order.notes == "" %>

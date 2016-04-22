@@ -1,8 +1,9 @@
-<h1>New Order</h1>
+<h4>New Order for Table <%= @party.table_num %></h4>
 
-<h6>Appetizers:</h6>
+
 <%= form_for ([@party,@order]) do |f| %>
 
+  <%= f.label :category, "Appetizers:"  %>
   <%= f.collection_select(:item_id, Item.where(category: "Appetizer", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
@@ -12,9 +13,9 @@
   <%= f.submit %>
 <% end %>
 
-<h6>Entrees:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
+  <%= f.label :category, "Entrees:"  %>
   <%= f.collection_select(:item_id, Item.where(category: "Entree", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
@@ -23,9 +24,10 @@
   <br>
   <%= f.submit %>
 <% end %>
-<h6>Desserts:</h6>
+
 <%= form_for ([@party,@order]) do |f| %>
 
+  <%= f.label :category, "Desserts:"  %>
   <%= f.collection_select(:item_id, Item.where(category: "Dessert", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
@@ -34,9 +36,10 @@
   <br>
   <%= f.submit %>
 <% end %>
-<h6>Drinks:</h6>
+
 <%= form_for ([@party,@order]) do |f| %>
 
+  <%= f.label :category, "Drinks:"  %>
   <%= f.collection_select(:item_id, Item.where(category: "Beverage", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
