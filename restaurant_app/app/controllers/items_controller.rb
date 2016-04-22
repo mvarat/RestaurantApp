@@ -26,6 +26,12 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def inactive
+    item = Item.find params[:id]
+    item.update_attributes(active: false)
+    redirect_to items_path
+  end
+
 
   private
 

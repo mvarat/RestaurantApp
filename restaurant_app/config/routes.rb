@@ -12,7 +12,14 @@ Rails.application.routes.draw do
   resources :parties do
     resources :orders
   end
-  resources :items
+  resources :items do
+    member do
+      get :inactive
+      put :inactive
+    end
+  end
+
+
 
 
   get '/admin' =>"items#index", as: :admin

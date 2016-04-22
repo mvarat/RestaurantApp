@@ -5,10 +5,12 @@
 
   <%= f.label :category %>
   <%= f.select :category, ['Appetizer', 'Entree', 'Dessert', 'Sides', 'Beverage']%>
-  
+
   <%= f.label :price %>
   <%= f.text_field :price %>
 
   <br>
   <%= f.submit %>
 <% end %>
+
+<h6><%= link_to "Delete Item", inactive_item_path(@item), method: :put %></h6>

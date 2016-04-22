@@ -3,7 +3,7 @@
 <h6>Appetizers:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.where(category: "Appetizer"), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Appetizer", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -15,7 +15,7 @@
 <h6>Entrees:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.where(category: "Entree"), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Entree", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -26,7 +26,7 @@
 <h6>Desserts:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.where(category: "Dessert"), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Dessert", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -37,7 +37,7 @@
 <h6>Drinks:</h6>
 <%= form_for ([@party,@order]) do |f| %>
 
-  <%= f.collection_select(:item_id, Item.where(category: "Beverage"), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Beverage", active: true), :id, :name ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
