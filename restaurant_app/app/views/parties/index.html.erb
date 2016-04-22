@@ -4,7 +4,12 @@
 
 
 <% @parties.each do |party| %>
-  <h1><%= link_to( party.table_num, party_orders_path(party.id) ) %></h1>
-  <p>Is paid? <%= party.is_paid %></p>
-  <h6><%= link_to "Add Order", new_party_order_path(party.id) %></h6>
+
+  <% if !party.is_paid %>
+    <div class="not_paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
+    <%= link_to "+", new_party_order_path(party.id) %>
+  <% elsif party.is_paid %>
+    <div class="paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
+    <%= link_to "+", new_party_order_path(party.id) %>
+  <%end%>
 <% end %>

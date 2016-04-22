@@ -15,7 +15,8 @@
  */
 
 body {
-  background-color: white;
+  background-image: url('foodbackground.jpg');
+
   text-align: center;
 }
 
@@ -25,4 +26,34 @@ a {
 
 p {
   margin: 0;
+}
+
+.paid {
+  margin: 3em;
+  display: inline-flex;
+  margin: auto;
+  color: white;
+  font-size: 4.5em;
+  background-color: red;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+}
+
+.not_paid {
+  margin: 3em;
+  display: inline-flex;
+  margin: auto;
+  color: white;
+  font-size: 4.5em;
+  background-color: green;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+}
+
+.container {
+  width: 30%;
+  height: 80%;
+  background-color: white;
 }
