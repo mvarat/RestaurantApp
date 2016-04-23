@@ -1,10 +1,13 @@
-<h1>Table <%= @party.table_num %></h1>
+<h4>Table <%= @party.table_num %> Receipt</h4>
 
-<h6><%= link_to "BACK TO PARTIES", parties_path %></h6>
+<h6><%= link_to "BACK TO TABLES", parties_path %></h6>
 
-<h5>Number of Guests: <%= @party.num_of_guests %></h5>
-<h5>Is paid? <%= @party.is_paid %></h5>
-
+<h6>Number of Guests: <%= @party.num_of_guests %></h6>
+<% if @party.is_paid %>
+  <h6>PAID!</h6>
+<% else %>
+  <h6>NOT PAID!</h6>
+<% end %>
 <% @orders.each do |order| %>
   <% if order.notes == "" %>
     <p><%= order.item.name %> ($<%= order.item.price %>)</p>
@@ -12,3 +15,4 @@
     <p><%= order.item.name %> ($<%= order.item.price %>) // Notes: <%= order.notes %></p>
   <% end %>
 <% end %>
+<h5>Total: $<%= @total %></h5>

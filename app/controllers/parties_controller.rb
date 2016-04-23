@@ -5,8 +5,13 @@ class PartiesController < ApplicationController
   #index
   def index
     @user = current_user
-    @parties = Party.where(user_id: @user).order("created_at DESC")
+    @parties = Party.where(user_id: @user).where(is_paid: false).order("created_at DESC")
+  end
 
+  #index
+  def all
+    @user = current_user
+    @parties = Party.where(user_id: @user).order("created_at DESC")
   end
 
   #new
@@ -17,7 +22,7 @@ class PartiesController < ApplicationController
   #create
   def create
     new_party = Party.create party_params.merge user_id: current_user.id
-    redirect_to parties_path
+    redirect_to party_orders_path(new_party)
   end
 
   def edit
@@ -27,6 +32,10 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find params[:id]
     @orders = Order.where(party_id: @party.id)
+    @total = 0
+    @orders.each do |order|
+      @total = order.item.price + @total
+    end
   end
 
   #          PATCH  /travelers/:id(.:format)         travelers#update
@@ -37,11 +46,10 @@ class PartiesController < ApplicationController
     redirect_to party_path party.id
   end
 
-   #destroy
-  def destroy
+  def inactive
     party = Party.find params[:id]
-    party.destroy
-    redirect_to profile_path
+    party.update_attributes(active: false)
+    redirect_to parties_path
   end
 
   private

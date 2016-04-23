@@ -1,5 +1,4 @@
-<h1>Edit Party</h1>
-
+<h1>Edit Table</h1>
 
 <%= form_for @party do |f| %>
   <%= f.label :table_num, "Table Number" %>
@@ -14,4 +13,4 @@
   <%= f.submit %>
 <% end %>
 
-<h6><%= link_to "Delete Party", party_path(@party), method: :delete %></h6>
+<h6><%= button_to "Make Inactive", inactive_party_path(@party), method: :put %></h6>

@@ -1,14 +1,13 @@
 <h4>Table <%= @party.table_num %></h4>
 
-<h6><%= link_to "ADD ORDER", new_party_order_path(@party) %></h6>
-<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %></h6>
-<h6><%= link_to "VIEW RECEIPT", party_path(@party) %></h6>
+<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %> | <%= link_to "VIEW RECEIPT", party_path(@party) %> | <%= link_to "BACK TO TABLE", parties_path %></h6>
+<h5><%= link_to "ADD ORDER", new_party_order_path(@party) %></h5>
 
 <% @orders.each do |order| %>
-  <% if order.notes == "" %>
-    <p><%= order.item.name %> ($<%= order.item.price %>)</p>
-  <% else %>
-    <p><%= order.item.name %> ($<%= order.item.price %>) // Notes: <%= order.notes %></p>
+<div class="receipt-items">
+  <p><%= link_to "X      ", party_order_path(order.party, order.id), method: :delete %><%= order.item.name %>, $<%= order.item.price %></p>
+  <% if order.notes != "" %>
+    <div class="notes"><%= order.notes %></div>
   <% end %>
-  <%= link_to "  X", party_order_path(order.party, order.id), method: :delete %>
+  </div>
 <% end %>

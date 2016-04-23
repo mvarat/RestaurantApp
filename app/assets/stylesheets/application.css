@@ -16,7 +16,9 @@
 
 body {
   background-image: url('foodbackground.jpg');
+  background-position: center;
   background-size: cover;
+  background-repeat: repeat;
   text-align: center;
 }
 
@@ -28,32 +30,51 @@ p {
   margin: 0;
 }
 
-.paid {
-  margin: 3em;
+.table {
   display: inline-flex;
-  margin: auto;
+  justify-content: space-around;
+  margin: 2%;
   color: white;
   font-size: 4.5em;
-  background-color: red;
   width: 1.6em;
   height: 1.6em;
   border-radius: 50%;
+  text-align: center;
 }
 
+.paid {
+  background-color: black;
+}
 .not_paid {
-  margin: 3em;
-  display: inline-flex;
-  margin: auto;
-  color: white;
-  font-size: 4.5em;
-  background-color: green;
-  width: 1.6em;
-  height: 1.6em;
-  border-radius: 50%;
+  background-color: white;
+  border: 3px solid black;
 }
 
 .container {
   width: 30%;
-  height: 80%;
-  background-color: white;
+  min-height: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 600px;
+}
+
+.notes {
+  margin-left: 20px;
+  color: grey;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.receipt-items {
+  font-size: 1.2em;
+  text-align: left;
+  margin-left: 100px;
+  margin-right: 30px;
+}
+
+.dropdown {
+  width: 200px;
+}
+
+.text-field {
+  width: 200px;
 }

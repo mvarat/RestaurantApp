@@ -1,14 +1,22 @@
+<% if @user.username == "Admin" || "admin" %>
+
 <%= form_for @item do |f| %>
 
   <%= f.label :name, "Item Name" %>
-  <%= f.text_field :name%>
+
+  <%= f.text_field(:name, class: "text-field") %>
 
   <%= f.label :category %>
-  <%= f.select :category, ['Appetizer', 'Entree', 'Dessert', 'Sides', 'Beverage']%>
+  <%= f.select(:category, ['Appetizer', 'Entree', 'Dessert', 'Sides', 'Beverage'], {}, {:class=>'dropdown'})%>
 
   <%= f.label :price %>
   <%= f.text_field :price %>
 
   <br>
   <%= f.submit %>
+<% end %>
+
+<% else %>
+
+<h6>You must be logged in as Admin to add a menu item.</h6>
 <% end %>

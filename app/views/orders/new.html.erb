@@ -2,21 +2,27 @@
 
 
 <%= form_for ([@party,@order]) do |f| %>
-
+  <div class="row">
+  <div class="four columns">
   <%= f.label :category, "Appetizers:"  %>
-  <%= f.collection_select(:item_id, Item.where(category: "Appetizer", active: true), :id, :name ) %>
 
+  <%= f.collection_select(:item_id, Item.where(category: "Appetizer", active: true), :id, :name, {:prompt=>true}, {:class=>'dropdown'}) %>
+  </div>
+  <div class="four columns">
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
-
-  <br>
+ </div>
+  <div class="four columns">
+  <%= f.label :notes, "  "  %>
   <%= f.submit %>
+</div>
+</div>
 <% end %>
 
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Entrees:"  %>
-  <%= f.collection_select(:item_id, Item.where(category: "Entree", active: true), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Entree", active: true), :id, :name, {:prompt=>true}, {:class=>'dropdown'}) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -28,7 +34,7 @@
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Desserts:"  %>
-  <%= f.collection_select(:item_id, Item.where(category: "Dessert", active: true), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Dessert", active: true), :id, :name, {:prompt=>true}, {:class=>'dropdown'} ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>
@@ -40,7 +46,7 @@
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Drinks:"  %>
-  <%= f.collection_select(:item_id, Item.where(category: "Beverage", active: true), :id, :name ) %>
+  <%= f.collection_select(:item_id, Item.where(category: "Beverage", active: true), :id, :name, {:prompt=>true}, {:class=>'dropdown'} ) %>
 
   <%= f.label :notes  %>
   <%= f.text_field :notes %>

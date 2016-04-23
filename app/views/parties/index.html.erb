@@ -1,15 +1,10 @@
-<h4>Tables</h4>
+<h4>Open Tables</h4>
 
 <h6><%= link_to "Add a new table", new_party_path %></h6>
-
+<h6><%= link_to "All Tables", all_tables_path %></h6>
 
 <% @parties.each do |party| %>
 
-  <% if !party.is_paid %>
-    <div class="not_paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
-    <%= link_to "+", new_party_order_path(party.id) %>
-  <% elsif party.is_paid %>
-    <div class="paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
-    <%= link_to "+", new_party_order_path(party.id) %>
-  <%end%>
+    <div class="table not_paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
+
 <% end %>

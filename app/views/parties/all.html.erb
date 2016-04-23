@@ -1,0 +1,10 @@
+<h4>All Tables</h4>
+
+<% @parties.each do |party| %>
+
+  <% if !party.is_paid %>
+    <div class="table not_paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
+  <% elsif party.is_paid %>
+    <div class="table paid"><%= link_to( party.table_num, party_orders_path(party.id) ) %></div>
+  <%end%>
+<% end %>

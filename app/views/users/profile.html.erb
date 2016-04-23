@@ -1,7 +1,15 @@
 <h2>Hello <%= @user.name %>!</h2>
 
-<h5><%= link_to "Your Tables", parties_path %></h5>
+<h5><%= link_to "OPEN TABLES", parties_path %></h5>
 
-<h5><%= link_to "Create A New Table", new_party_path %></h5>
+<h5><%= link_to "ADD A NEW TABLE", new_party_path %></h5>
 
-<h5><%= link_to "Admin", admin_path %></h5>
+<h5><%= link_to "ALL TABLES", all_tables_path %></h5>
+
+<h5><%= link_to "ADD A NEW TABLE", new_party_path %></h5>
+
+<% if @user.username == "Admin" %>
+  <h5><%= link_to "VIEW/EDIT MENU", admin_path %></h5>
+<% else %>
+  <h5><%= link_to "VIEW MENU", items_path %></h5>
+<% end %>

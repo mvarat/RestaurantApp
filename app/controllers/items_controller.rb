@@ -4,9 +4,15 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.where(active: true)
+    @appetizers = @items.where(category: "Appetizer")
+    @entrees = @items.where(category: "Entree")
+    @sides = @items.where(category: "Side")
+    @desserts = @items.where(category: "Dessert")
+    @beverages = @items.where(category: "Beverage")
   end
 
   def new
+    @user = current_user
     @item = Item.new
   end
 
@@ -17,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @item = Item.find params[:id]
   end
 

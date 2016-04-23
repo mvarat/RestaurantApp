@@ -1,9 +1,0 @@
-<h1>Show Order</h1>
-
-<h6><%= link_to "ADD ORDER", new_party_order_path %></h6>
-
-<h5>Item: <%= @order.item.name %></h5>
-<h5>Price: <%= @order.item.price %></h5>
-<h5>Notes: <%= @order.notes %></h5>
-
-<h6><%= link_to "BACK TO ORDERS", party_orders_path(@party) %></h6>

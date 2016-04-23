@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
 
   include SessionsHelper
 
+  def all
+    @orders = Order.all
+  end
+
   def index
     @items = Item.all
     @party = Party.find params[:party_id]
@@ -19,12 +23,12 @@ class OrdersController < ApplicationController
     @items = Item.all
   end
 
-  def show
-    @party = Party.find params[:party_id]
-    @order = Order.find params[:id]
-    @item = Item.where id: params[:item_id]
-
+  def is_complete
+    order = Order.find params[:id]
+    order.update_attributes(is_complete: true)
+    redirect_to all_orders_path
   end
+
 
   def destroy
     order = Order.find params[:id]
