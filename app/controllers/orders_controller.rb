@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   include SessionsHelper
 
   def all
-    @orders = Order.all
+    @orders = Order.where(is_complete: false)
   end
 
   def index

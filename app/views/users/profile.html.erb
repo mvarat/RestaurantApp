@@ -13,3 +13,7 @@
 <% else %>
   <h5><%= link_to "VIEW MENU", items_path %></h5>
 <% end %>
+
+<% if @user.username == "chef" %>
+  <h5><%= link_to "KITCHEN LIST", all_orders_path %></h5>
+<% end %>

@@ -1,6 +1,6 @@
 <h4>Table <%= @party.table_num %></h4>
 
-<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %> | <%= link_to "VIEW RECEIPT", party_path(@party) %> | <%= link_to "BACK TO TABLE", parties_path %></h6>
+<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %> | <%= link_to "VIEW RECEIPT", party_path(@party) %> | <%= link_to "BACK TO TABLES", parties_path %></h6>
 <h5><%= link_to "ADD ORDER", new_party_order_path(@party) %></h5>
 
 <% @orders.each do |order| %>

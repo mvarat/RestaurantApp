@@ -8,6 +8,7 @@
 User.create(name:"Administrator", username:"Admin", password: "password")
 User.create(name:"Administrator", username:"admin2", password: "password")
 
+
 Item.create(name:"Soup of the Day", category:"Appetizer", price: "9", active: true)
 Item.create(name:"Mixed Greens Salad", category:"Appetizer", price: "11", active: true)
 Item.create(name:"Small Caesar Salad", category:"Appetizer", price: "12", active: true)

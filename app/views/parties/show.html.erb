@@ -9,10 +9,17 @@
   <h6>NOT PAID!</h6>
 <% end %>
 <% @orders.each do |order| %>
+<div class = "receipt-items">
   <% if order.notes == "" %>
     <p><%= order.item.name %> ($<%= order.item.price %>)</p>
   <% else %>
-    <p><%= order.item.name %> ($<%= order.item.price %>) // Notes: <%= order.notes %></p>
+    <p><%= order.item.name %> ($<%= order.item.price %>) </p>
+    <div class='notes'> <%= order.notes %></div>
   <% end %>
+</div>
 <% end %>
 <h5>Total: $<%= @total %></h5>
+<p>Suggested Tip:</p>
+<p>15%: $<%= @fifteen %></p>
+<p>20%: $<%= @twenty %></p>
+<p>25%: $<%= @twentyfive %></p>

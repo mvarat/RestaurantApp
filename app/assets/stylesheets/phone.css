@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 body {
   background-image: url('foodbackground.jpg');
   background-position: center;
@@ -22,7 +21,6 @@ body {
   background-repeat: repeat;
   text-align: center;
 }
-
 
 a {
   text-decoration: none;
@@ -55,7 +53,7 @@ p {
 .container {
   width: 30%;
   min-height: 500px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: "red";
   min-width: 600px;
 }
 
@@ -83,10 +81,4 @@ p {
 
 .kitchen-order{
   font-weight: bold;
-}
-
-@media screen and (max-width: 1000px) {
-    .container {
-        background-color: lightgreen;
-    }
 }

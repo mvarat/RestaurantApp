@@ -1,9 +1,11 @@
-<h4>Chef's List</h4>
+<h4>KITCHEN LIST</h4>
 
 <% @orders.each do |order| %>
 
-<p><%= order.item.name %></p>
-<h6><%= order.notes %></h6>
+<div class="kitchen-order"><%= order.item.name %></div>
+<% if order.notes != "" %>
+  <div class="notes"><%= order.notes %></div>
+<% end %>
 <p>(Table: <%= order.party.table_num %>)</p>
 
 <h6><%= button_to "Complete Order", is_complete_path(order), method: :put %></h6>

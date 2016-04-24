@@ -5,13 +5,13 @@ class PartiesController < ApplicationController
   #index
   def index
     @user = current_user
-    @parties = Party.where(user_id: @user).where(is_paid: false).order("created_at DESC")
+    @parties = Party.where(user_id: @user).where(is_paid: false).where(active: true).order("created_at DESC")
   end
 
   #index
   def all
     @user = current_user
-    @parties = Party.where(user_id: @user).order("created_at DESC")
+    @parties = Party.where(user_id: @user).where(active: true).order("created_at DESC")
   end
 
   #new
@@ -35,6 +35,9 @@ class PartiesController < ApplicationController
     @total = 0
     @orders.each do |order|
       @total = order.item.price + @total
+      @fifteen = @total * 0.15
+      @twenty = @total * 0.2
+      @twentyfive = @total * 0.25
     end
   end
 
