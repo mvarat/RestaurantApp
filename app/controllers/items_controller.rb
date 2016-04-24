@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   include SessionsHelper
 
   def index
+    @user = current_user
     @items = Item.where(active: true)
     @appetizers = @items.where(category: "Appetizer")
     @entrees = @items.where(category: "Entree")
@@ -18,6 +19,7 @@ class ItemsController < ApplicationController
 
   #create
   def create
+    @user = current_user
     new_item = Item.create item_params
     redirect_to items_path
   end
@@ -28,12 +30,14 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @user = current_user
     item = Item.find params[:id]
     item.update item_params
     redirect_to items_path
   end
 
   def inactive
+    @user = current_user
     item = Item.find params[:id]
     item.update_attributes(active: false)
     redirect_to items_path

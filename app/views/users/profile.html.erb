@@ -1,19 +1,16 @@
-<h2>Hello <%= @user.name %>!</h2>
 
-<h5><%= link_to "OPEN TABLES", parties_path %></h5>
+<h4><%= link_to "ADD TABLE", new_party_path %></h4>
 
-<h5><%= link_to "ADD A NEW TABLE", new_party_path %></h5>
+<h4><%= link_to "OPEN TABLES", parties_path %></h4>
 
-<h5><%= link_to "ALL TABLES", all_tables_path %></h5>
-
-<h5><%= link_to "ADD A NEW TABLE", new_party_path %></h5>
+<h4><%= link_to "ALL TABLES", all_tables_path %></h4>
 
 <% if @user.username == "Admin" %>
-  <h5><%= link_to "VIEW/EDIT MENU", admin_path %></h5>
+  <h4><%= link_to "VIEW/EDIT MENU", admin_path %></h4>
 <% else %>
-  <h5><%= link_to "VIEW MENU", items_path %></h5>
+  <h4><%= link_to "VIEW MENU", items_path %></h4>
 <% end %>
 
 <% if @user.username == "chef" %>
-  <h5><%= link_to "KITCHEN LIST", all_orders_path %></h5>
+  <h4><%= link_to "KITCHEN LIST", all_orders_path %></h4>
 <% end %>

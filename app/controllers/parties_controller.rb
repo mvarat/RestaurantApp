@@ -16,20 +16,24 @@ class PartiesController < ApplicationController
 
   #new
   def new
+    @user = current_user
     @party = Party.new
   end
 
   #create
   def create
+    @user = current_user
     new_party = Party.create party_params.merge user_id: current_user.id
     redirect_to party_orders_path(new_party)
   end
 
   def edit
+    @user = current_user
     @party = Party.find params[:id]
   end
 
   def show
+    @user = current_user
     @party = Party.find params[:id]
     @orders = Order.where(party_id: @party.id)
     @total = 0
@@ -44,12 +48,14 @@ class PartiesController < ApplicationController
   #          PATCH  /travelers/:id(.:format)         travelers#update
   #          PUT    /travelers/:id(.:format)         travelers#update
   def update
+    @user = current_user
     party = Party.find params[:id]
     party.update party_params
     redirect_to party_path party.id
   end
 
   def inactive
+    @user = current_user
     party = Party.find params[:id]
     party.update_attributes(active: false)
     redirect_to parties_path

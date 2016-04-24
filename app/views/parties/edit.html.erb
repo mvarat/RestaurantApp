@@ -1,4 +1,4 @@
-<h1>Edit Table</h1>
+<h4>EDIT TABLE</h4>
 
 <%= form_for @party do |f| %>
   <%= f.label :table_num, "Table Number" %>
@@ -10,7 +10,8 @@
   <%= f.label :is_paid, "Paid?" %>
   <%= f.check_box :is_paid %>
   <br>
-  <%= f.submit %>
+
+  <%= f.submit "UPDATE" %>
 <% end %>
 
 <h6><%= button_to "DELETE", inactive_party_path(@party), method: :put %></h6>
