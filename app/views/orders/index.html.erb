@@ -1,10 +1,10 @@
-<h4>Table <%= @party.table_num %></h4>
+<h4>TABLE <%= @party.table_num %></h4>
 
-<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %> | <%= link_to "VIEW RECEIPT", party_path(@party) %> | <%= link_to "BACK TO TABLES", parties_path %></h6>
+<h6><%= link_to "EDIT TABLE", edit_party_path(@party) %> | <%= link_to "VIEW RECEIPT", party_path(@party) %> | <%= link_to "OPEN TABLES", parties_path %></h6>
 <h5><%= link_to "ADD ORDER", new_party_order_path(@party) %></h5>
 
 <% @orders.each do |order| %>
-<div class="receipt-items">
+<div class="order-items">
   <p><%= link_to "X      ", party_order_path(order.party, order.id), method: :delete %><%= order.item.name %>, $<%= order.item.price %></p>
   <% if order.notes != "" %>
     <div class="notes"><%= order.notes %></div>

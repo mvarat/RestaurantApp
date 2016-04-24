@@ -1,25 +1,35 @@
 <h4>TABLE <%= @party.table_num %> RECEIPT</h4>
 
-<h6><%= link_to "BACK TO TABLES", parties_path %></h6>
+<%= link_to "OPEN TABLES", parties_path %></h6> | <%= link_to "ALL TABLES", all_tables_path %></h6>
 
 <h6>Number of Guests: <%= @party.num_of_guests %></h6>
-<% if @party.is_paid %>
-  <h6>PAID!</h6>
-<% else %>
-  <h6>NOT PAID!</h6>
-<% end %>
+
 <% @orders.each do |order| %>
-<div class = "receipt-items">
-  <% if order.notes == "" %>
-    <p><%= order.item.name %> ($<%= order.item.price %>)</p>
-  <% else %>
-    <p><%= order.item.name %> ($<%= order.item.price %>) </p>
-    <div class='notes'> <%= order.notes %></div>
-  <% end %>
-</div>
+  <div class = "row">
+    <div class = "six columns">
+      <div class = "receipt-items">
+        <% if order.notes == "" %>
+          <p><%= order.item.name %></p>
+        <% else %>
+          <p><%= order.item.name %></p>
+          <div class='notes'> <%= order.notes %></div>
+        <% end %>
+      </div>
+    </div>
+    <div class = "six columns">
+      <div class= "receipt-price"><%= number_to_currency(order.item.price) %></div>
+    </div>
+  </div>
 <% end %>
-<h5>Total: $<%= @total %></h5>
+<h6>Subtotal: <%= number_to_currency(@subtotal) %></h6>
+<h6>Tax: <%= number_to_currency(@tax) %></h6>
+<h5>Total: <%= number_to_currency(@total) %></h5>
+<% if @party.is_paid %>
+  <h5>Balance: $0.00</h5>
+<% else %>
+  <h5>Balance: <%= number_to_currency(@total) %></h5>
+<% end %>
 <p>Suggested Tip:</p>
-<p>15%: $<%= @fifteen %></p>
-<p>20%: $<%= @twenty %></p>
-<p>25%: $<%= @twentyfive %></p>
+<p>15%: <%= number_to_currency(@fifteen) %></p>
+<p>20%: <%= number_to_currency(@twenty) %></p>
+<p>25%: <%= number_to_currency(@twentyfive) %></p>

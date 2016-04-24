@@ -36,9 +36,11 @@ class PartiesController < ApplicationController
     @user = current_user
     @party = Party.find params[:id]
     @orders = Order.where(party_id: @party.id)
-    @total = 0
+    @subtotal = 0
     @orders.each do |order|
-      @total = order.item.price + @total
+      @subtotal = order.item.price + @subtotal
+      @tax = @subtotal * 0.08875
+      @total = @subtotal + @tax
       @fifteen = @total * 0.15
       @twenty = @total * 0.2
       @twentyfive = @total * 0.25

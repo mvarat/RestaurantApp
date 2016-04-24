@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def log_in
+    @user = current_user
   end
 
   def profile

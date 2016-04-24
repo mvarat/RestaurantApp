@@ -1,5 +1,7 @@
 <h4>NEW TABLE</h4>
 
+<h6><%= link_to "OPEN TABLES", parties_path %> | <%= link_to "ALL TABLES", all_tables_path %></h6>
+
 <%= form_for @party do |f| %>
 
   <%= f.label :table_num, "Table Number" %>
