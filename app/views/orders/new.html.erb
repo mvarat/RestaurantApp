@@ -1,6 +1,7 @@
 <h4>Table <%= @party.table_num %> Order</h4>
 
-
+<div class="row">
+  <div class="four columns">
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Appetizers:"  %>
@@ -11,7 +12,8 @@
   <br>
   <%= f.submit %>
 <% end %>
-
+</div>
+  <div class="four columns">
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Entrees:"  %>
@@ -23,7 +25,8 @@
   <br>
   <%= f.submit %>
 <% end %>
-
+</div>
+  <div class="four columns">
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Desserts:"  %>
@@ -35,7 +38,23 @@
   <br>
   <%= f.submit %>
 <% end %>
+</div>
+</div>
+<div class="row">
+<div class="four columns">
+<%= form_for ([@party,@order]) do |f| %>
 
+<%= f.label :category, "Sides:"  %>
+<%= f.collection_select(:item_id, Item.where(category: "Side", active: true), :id, :name, {:prompt=>true}, {:class=>'dropdown'} ) %>
+
+<%= f.label :notes  %>
+<%= f.text_field :notes %>
+
+<br>
+<%= f.submit %>
+<% end %>
+</div>
+<div class="four columns">
 <%= form_for ([@party,@order]) do |f| %>
 
   <%= f.label :category, "Drinks:"  %>
@@ -47,3 +66,5 @@
   <br>
   <%= f.submit %>
 <% end %>
+</div>
+</div>
