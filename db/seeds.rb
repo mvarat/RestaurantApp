@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create(name:"Administrator", username:"Admin", password: "password")
 User.create(name:"Administrator", username:"admin2", password: "password")
-
+User.create(name:"Chef", username:"chef", password: "password")
 
 Item.create(name:"Soup of the Day", category:"Appetizer", price: "9", active: true)
 Item.create(name:"Mixed Greens Salad", category:"Appetizer", price: "11", active: true)
