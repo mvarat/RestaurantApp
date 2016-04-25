@@ -16,7 +16,7 @@
 
 
 body {
-  background-image: url('foodbackground.jpg');
+  background: image-url('foodbackground.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
