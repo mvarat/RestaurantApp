@@ -49,13 +49,13 @@ A user will be able to have full functionality on a mobile device.
 Rails 4.2.6, Ruby CSS, HTML
 
 ### ERD
-![alt tag](http://imgur.com/s952Qsk)
+![alt tag](http://i.imgur.com/s952Qsk.jpg)
 
 ### WIRE FRAMES
-![alt tag](http://imgur.com/wmTIDtH)
-![alt tag](http://imgur.com/zOCawdb)
-![alt tag](http://imgur.com/ktLyjwj)
-![alt tag](http://imgur.com/sjQbuN5)
-![alt tag](http://imgur.com/Ltz1czn)
-![alt tag](http://imgur.com/Pwv3InF)
-![alt tag](http://imgur.com/wJLBMlR)
+![alt tag](http://i.imgur.com/wmTIDtH.jpg)
+![alt tag](http://i.imgur.com/zOCawdb.jpg)
+![alt tag](http://i.imgur.com/ktLyjwj.jpg)
+![alt tag](http://i.imgur.com/sjQbuN5.jpg)
+![alt tag](http://i.imgur.com/Ltz1czn.jpg)
+![alt tag](http://i.imgur.com/Pwv3InF.jpg)
+![alt tag](http://i.imgur.com/wJLBMlR.jpg)
