@@ -1,6 +1,6 @@
 <h4>EDIT TABLE</h4>
 
-<h6><%= link_to "ADD ORDER", new_party_order_path(@party) %> | <%= link_to "OPEN TABLES", parties_path %> | <%= link_to "ALL TABLES", all_tables_path %></h6>
+<h6><%= link_to "ADD ORDER", new_party_order_path(@party), :class => 'links' %><%= link_to "OPEN TABLES", parties_path, :class => 'links' %><%= link_to "ALL TABLES", all_tables_path, :class => 'links' %></h6>
 
 <%= form_for @party do |f| %>
   <%= f.label :table_num, "Table Number" %>

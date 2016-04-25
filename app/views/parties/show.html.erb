@@ -1,8 +1,8 @@
 <h4>TABLE <%= @party.table_num %> RECEIPT</h4>
 
-<%= link_to "OPEN TABLES", parties_path %></h6> | <%= link_to "ALL TABLES", all_tables_path %></h6>
+<h6><%= link_to "BACK", party_orders_path(@party), :class => 'links' %><%= link_to "OPEN TABLES", parties_path, :class => 'links' %><%= link_to "ALL TABLES", all_tables_path, :class => 'links' %></h6>
 
-<h6>Number of Guests: <%= @party.num_of_guests %></h6>
+<p>Number of Guests: <%= @party.num_of_guests %></p>
 
 <% @orders.each do |order| %>
   <div class = "row">
@@ -21,8 +21,8 @@
     </div>
   </div>
 <% end %>
-<h6>Subtotal: <%= number_to_currency(@subtotal) %></h6>
-<h6>Tax: <%= number_to_currency(@tax) %></h6>
+<h5>Subtotal: <%= number_to_currency(@subtotal) %></h5>
+<h5>Tax: <%= number_to_currency(@tax) %></h5>
 <h5>Total: <%= number_to_currency(@total) %></h5>
 <% if @party.is_paid %>
   <h5>Balance: $0.00</h5>

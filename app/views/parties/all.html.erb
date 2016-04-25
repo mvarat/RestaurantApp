@@ -1,6 +1,6 @@
 <h4>ALL TABLES</h4>
 
-<h6><%= link_to "OPEN TABLES", parties_path %> | <%= link_to "NEW TABLE", new_party_path %></h6>
+<h6><%= link_to "OPEN TABLES", parties_path, :class => 'links' %><%= link_to "NEW TABLE", new_party_path, :class => 'links' %></h6>
 
 <% @parties.each do |party| %>
 
