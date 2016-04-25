@@ -16,7 +16,7 @@
 
 
 body {
-  overflow: hidden;
+  overflow: scroll;
   background-image: url('foodbackground.jpg');
   background-position: center;
   background-size: cover;
