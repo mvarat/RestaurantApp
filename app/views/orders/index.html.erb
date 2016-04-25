@@ -1,7 +1,7 @@
 <h4>TABLE <%= @party.table_num %></h4>
 
 <h6><%= link_to "EDIT TABLE", edit_party_path(@party),:class => 'links' %>  <%= link_to "VIEW RECEIPT", party_path(@party), :class => 'links' %> <%= link_to "OPEN TABLES", parties_path, :class => 'links' %></h6>
-<h6>[<%= link_to "ADD ORDER", new_party_order_path(@party), { :class=>"red" } %>]</h6>
+<h6><%= link_to "ADD ORDER", new_party_order_path(@party), { :class=>"red" } %></h6>
 
 <% @orders.each do |order| %>
 <div class="order-items">
