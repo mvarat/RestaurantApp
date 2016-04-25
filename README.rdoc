@@ -26,3 +26,36 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+
+### GADOE'S
+
+This is a custom application created for a client who owns a NYC restaurant, GADOE'S. The app will be used by the staff (servers, kitchen, and management) to facilitate the order process, checkout, and kitchen system.
+
+### USER STORIES
+A user will be able to create an account with a username and password.
+A user will be able to login and logout of the application.
+A user will be able to create a party/table and assign it a table number with the number of guests in the party.
+A user will be able to add orders to the table by selecting a menu item and adding any necessary notes.
+A user will be able to edit the table number, number of guests, mark the order as paid or inactive.
+A user will be able to create a receipt for the table.
+A user will be able to view the menu.
+A user will be able to create a new menu item or edit a menu item when logged is as 'Admin'.
+A user will be able to view a list of orders for the kitchen and mark them as complete when logged in as 'chef'.
+A user will be able to have full functionality on a mobile device.
+
+### TECHNOLOGY
+Rails 4.2.6, Ruby CSS, HTML
+
+### ERD
+![alt tag](http://imgur.com/s952Qsk)
+
+### WIRE FRAMES
+![alt tag](http://imgur.com/wmTIDtH)
+![alt tag](http://imgur.com/zOCawdb)
+![alt tag](http://imgur.com/ktLyjwj)
+![alt tag](http://imgur.com/sjQbuN5)
+![alt tag](http://imgur.com/Ltz1czn)
+![alt tag](http://imgur.com/Pwv3InF)
+![alt tag](http://imgur.com/wJLBMlR)
