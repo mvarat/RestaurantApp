@@ -3,6 +3,7 @@
 <h6><%= link_to "BACK", party_orders_path(@party), :class => 'links' %><%= link_to "OPEN TABLES", parties_path, :class => 'links' %><%= link_to "ALL TABLES", all_tables_path, :class => 'links' %></h6>
 
 <p>Number of Guests: <%= @party.num_of_guests %></p>
+<p>Server: <%= @user.name %></p>
 
 <% @orders.each do |order| %>
   <div class = "row">
